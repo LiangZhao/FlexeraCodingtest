@@ -1,0 +1,16 @@
+process event: 3
+start reduce
+	process event: 2
+	start reduce
+
+process event: 4
+
+start reduce
+process event: 12
+start reduce
+process event: 7
+start reduce
+process event: 20130
+process event: 100000
+process event: 100000
+start reduce

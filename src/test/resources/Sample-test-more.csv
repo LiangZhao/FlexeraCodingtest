@@ -1,0 +1,13 @@
+ComputerID,UserID,ApplicationID,ComputerType,Comment
+1,1091,606,DESKTOP,Exported from System A
+2,8361,62,DESKTOP,Exported from System B
+3,4380,188,DESKTOP,Exported from System A
+4,3312,700,desktop,Exported from System A
+5,1739,257,LAPTOP,Exported from System A
+6,7582,554,LAPTOP,Exported from System A
+7,6691,971,DESKTOP,Exported from System B
+8,7339,448,DESKTOP,Exported from System A
+9,6918,365,DESKTOP,Exported from System B
+10,5044,76,DESKTOP,Exported from System A
+11,5044,76,LAPTOP,Exported from System A
+12,5044,76,LAPTOP,Exported from System A

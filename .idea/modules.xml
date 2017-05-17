@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Flexera.iml" filepath="$PROJECT_DIR$/.idea/modules/Flexera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Flexera_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Flexera_main.iml" group="Flexera" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Flexera_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Flexera_test.iml" group="Flexera" />
+    </modules>
+  </component>
+</project>

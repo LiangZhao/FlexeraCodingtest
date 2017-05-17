@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="au.com.flexera.codingtest.PurchaseCalculatorTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2017-05-17T02:11:52" hostname="DESKTOP-GJFFG3G" time="7.013">
+  <properties/>
+  <testcase name="testCatulateMinimumCopyThree" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.068"/>
+  <testcase name="testCatulateMinimumCopyForAppTwoM" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.008"/>
+  <testcase name="testCatulateMinimumCopyOne" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.035"/>
+  <testcase name="testCatulateMinimumCopyTwo" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.028"/>
+  <testcase name="testSplitWithFiveToken" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.001"/>
+  <testcase name="testSplit" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.0"/>
+  <testcase name="testCatulateMinimumCopy_AppID374" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.19"/>
+  <testcase name="testCatulateMinimumCopyForApp" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.001"/>
+  <testcase name="testCatulateMinimumCopy_LargeData_AppID374" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="5.333"/>
+  <testcase name="testCatulateMinimumCopyForAppTwo" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.001"/>
+  <testcase name="testCatulateMinimumCopyMore" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.018"/>
+  <testcase name="testCatulateMinimumCopyTwoM" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="0.019"/>
+  <testcase name="testCatulateMinimumCopy" classname="au.com.flexera.codingtest.PurchaseCalculatorTest" time="1.308"/>
+  <system-out><![CDATA[process event: 3
+start reduce
+process event: 2
+start reduce
+process event: 4
+start reduce
+process event: 12
+start reduce
+process event: 7
+start reduce
+process event: 20130
+process event: 100000
+process event: 100000
+start reduce
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

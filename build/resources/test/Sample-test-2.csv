@@ -1,0 +1,5 @@
+ComputerID,UserID,ApplicationID,ComputerType,Comment
+1,1091,606,DESKTOP,Exported from System A
+2,1091,606,LAPTOP,Exported from System A
+3,1092,606,DESKTOP,Exported from System A
+4,1092,606,LAPTOP,Exported from System A

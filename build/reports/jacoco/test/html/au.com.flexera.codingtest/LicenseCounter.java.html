@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LicenseCounter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Flexera</a> &gt; <a href="index.source.html" class="el_package">au.com.flexera.codingtest</a> &gt; <span class="el_source">LicenseCounter.java</span></div><h1>LicenseCounter.java</h1><pre class="source lang-java linenums">package au.com.flexera.codingtest;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * LicenseCounter
+ * @author LiangZhao
+ * @version 1.0
+ * @since 13/05/2017
+ *
+ */
+public class LicenseCounter {
+
+
+    private int laptopCount;
+    private int desktopCount;
+    private String installId;
+
+    public String getInstallId() {
+<span class="fc" id="L21">        return installId;</span>
+    }
+
+    public void setInstallId(String installId) {
+<span class="fc" id="L25">        this.installId = installId;</span>
+<span class="fc" id="L26">    }</span>
+
+    private Set&lt;String&gt; laptopIdCache;
+    private Set&lt;String&gt; desktopIdCache;
+
+<span class="fc" id="L31">    public LicenseCounter(){</span>
+<span class="fc" id="L32">        this.laptopIdCache = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L33">        this.desktopIdCache = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L34">    }</span>
+
+    public int getLaptopCount() {
+<span class="fc" id="L37">        return laptopCount;</span>
+    }
+
+    public void setLaptopCount(int laptopCount) {
+<span class="fc" id="L41">        this.laptopCount = laptopCount;</span>
+<span class="fc" id="L42">    }</span>
+
+    public int getDesktopCount() {
+<span class="fc" id="L45">        return desktopCount;</span>
+    }
+
+    public void setDesktopCount(int desktopCount) {
+<span class="fc" id="L49">        this.desktopCount = desktopCount;</span>
+<span class="fc" id="L50">    }</span>
+
+    public int countLaptop(String deviceId) {
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (!laptopIdCache.contains(deviceId)) {</span>
+<span class="fc" id="L54">            laptopIdCache.add(deviceId);</span>
+<span class="fc" id="L55">            return ++laptopCount;</span>
+        }else {
+<span class="fc" id="L57">            return laptopCount;</span>
+        }
+    }
+
+    public int countDesktop(String deviceId) {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (!desktopIdCache.contains(deviceId)) {</span>
+<span class="fc" id="L63">            desktopIdCache.add(deviceId);</span>
+<span class="fc" id="L64">            return ++desktopCount;</span>
+        } else {
+<span class="fc" id="L66">            return desktopCount;</span>
+        }
+    }
+
+    public int catulateLicenseCount(){
+<span class="fc" id="L71">        int result = this.laptopCount;</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (this.desktopCount &gt; this.laptopCount){</span>
+<span class="fc" id="L73">            result+= this.desktopCount - this.laptopCount;</span>
+        }
+<span class="fc" id="L75">        return result;</span>
+    }
+
+    /**
+     * Use in function programming version, but it will cause more memory use so give up this solution.
+     * @param counter
+     * @return
+     */
+    public LicenseCounter merge(LicenseCounter counter){
+<span class="fc" id="L84">        LicenseCounter result = new LicenseCounter();</span>
+<span class="fc" id="L85">        result.setInstallId(counter.installId);</span>
+
+<span class="fc" id="L87">        Set&lt;String&gt; container = new HashSet&lt;&gt;(this.laptopIdCache);</span>
+<span class="fc" id="L88">        container.retainAll(counter.laptopIdCache);</span>
+<span class="fc" id="L89">        this.laptopIdCache.addAll(counter.laptopIdCache);</span>
+<span class="fc" id="L90">        result.laptopIdCache = this.laptopIdCache;</span>
+<span class="fc" id="L91">        result.setLaptopCount(this.laptopCount + counter.laptopCount - container.size());</span>
+
+<span class="fc" id="L93">        container = new HashSet&lt;&gt;(this.desktopIdCache);</span>
+<span class="fc" id="L94">        container.retainAll(counter.desktopIdCache);</span>
+<span class="fc" id="L95">        this.desktopIdCache.addAll(counter.desktopIdCache);</span>
+<span class="fc" id="L96">        result.desktopIdCache = this.desktopIdCache;</span>
+<span class="fc" id="L97">        result.setDesktopCount(this.desktopCount + counter.desktopCount - container.size());</span>
+
+<span class="fc" id="L99">        return result;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L104">        return &quot;LicenseCounter{&quot; +</span>
+                &quot;laptopCount=&quot; + laptopCount +
+                &quot;, desktopCount=&quot; + desktopCount +
+                &quot;, installId='&quot; + installId + '\'' +
+                &quot;, laptopIdCache=&quot; + laptopIdCache +
+                &quot;, desktopIdCache=&quot; + desktopIdCache +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L115" title="All 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">        if (!(o instanceof LicenseCounter)) return false;</span>
+
+<span class="nc" id="L118">        LicenseCounter counter = (LicenseCounter) o;</span>
+
+<span class="nc" id="L120">        return installId.equals(counter.installId);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L125">        return installId.hashCode();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
